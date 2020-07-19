@@ -21,6 +21,6 @@
     "@babel/preset-env": "^7.10.4"
   },
   "scripts": {
-    "start": "bable-node app.js"
+    "start": "babel-node app.js"
   }
 }
