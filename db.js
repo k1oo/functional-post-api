@@ -18,3 +18,9 @@ export const POOL = CONNECT({
   password: DB_CONFIG.PASSWORD,
   database: DB_CONFIG.NAME,
 });
+
+const { QUERY, EQ } = POOL;
+
+export function findByUserPk(user_pk) {
+  return QUERY`SELECT * from users WHERE ${EQ({ pk: user_pk })}`;
+}
