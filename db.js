@@ -24,3 +24,7 @@ const { QUERY, EQ } = POOL;
 export function findByUserPk(user_pk) {
   return QUERY`SELECT * from users WHERE ${EQ({ pk: user_pk })}`;
 }
+
+export function findByPostPk(post_pk) {
+  return QUERY`SELECT * from posts WHERE ${EQ({ pk: post_pk })}`;
+}

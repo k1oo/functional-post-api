@@ -4,7 +4,7 @@ import bodyParser from 'body-parser';
 import morgan from 'morgan';
 
 import { register, login, patch_user, delete_user } from './routes/user';
-import { createPost, getPost } from './routes/post';
+import { create_post, get_post, patch_post, delete_post } from './routes/post';
 
 dotenv.config();
 
@@ -26,8 +26,10 @@ app.post('/login', login);
 app.patch('/user', patch_user);
 app.delete('/user', delete_user);
 
-app.post('/post', createPost);
-app.get('/post', getPost);
+app.post('/post', create_post);
+app.get('/post', get_post);
+app.patch('/post', patch_post);
+app.delete('/post', delete_post);
 
 app.use((_, res) => {
   return res.status(404).json({
